@@ -7,6 +7,7 @@ from pygame.font import Font
 
 from code.Const import C_YELLOW, SCORE_POS, MENU_OPTION, C_WHITE
 from code.DBProxy import DBProxy
+from code.Player import Player
 
 
 class Score:
@@ -23,9 +24,10 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.score_text(48, 'YOU WIN', C_YELLOW, SCORE_POS['Title'])
+            text = 'Player 1 enter your name'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-                text = 'Player 1 enter your name'
             if game_mode == MENU_OPTION[1]:
                 score = (player_score[0] + player_score[1] / 2)
                 text = 'Team enter name'
